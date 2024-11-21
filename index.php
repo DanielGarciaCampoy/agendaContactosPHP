@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php
+
+        require_once 'contactosService.php';
+
+        $contactos = getAllContactos();
+    
+    ?>
     <header class="index">
         <div class="logo">
             <img src="#" alt="logo">
             <h1>WhatsApp 4</h1>
         </div>
         <div class="buscarContactos">
-            <input type="text" placeholder="Buscar contactos...">
+            <input type="text" placeholder="Buscar contactos por nombre...">
             <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
@@ -22,18 +29,19 @@
         </div>
     </header>
     <div class="container">
-        <?php 
-        require_once 'contactosService.php';
-
-        $contactos = getAllContactos();
-
-        foreach ($contactos as $contacto): ?>
-            <tr>
-                <td><?= htmlspecialchars($contacto['nombre']) ?></td>
-                <td><?= htmlspecialchars($contacto['apellidos']) ?></td>
-                <td><?= htmlspecialchars($contacto['telefono']) ?></td>
-            </tr>
-        <?php endforeach; ?>
+        <div class="contactoCard">
+            <div class="contactoImg">
+                <img src="img/img.jpeg" alt="">
+            </div>
+            <div class="contactoInfo">
+                <?php
+                foreach ($contactos as $contacto): ?>
+                    <img src="" alt="">
+                    <p><?= $contacto['nombre']; ?>, <?= $contacto['apellidos']; ?></p>
+                    <p><?= htmlspecialchars($contacto['telefono']); ?></p>
+                <?php endforeach; ?>
+            </div>
+        </div>
     </div>
 </body>
 </html>

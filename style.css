@@ -3,6 +3,8 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* header */
+
 header.index {
     display: flex;
     align-items: center;
@@ -82,4 +84,26 @@ header.index .logo h1 {
 .botones a:active {
     transform: scale(1);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* main */
+main {
+}
+
+.contactoCard {
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightgray;
+    width: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contactoCard img {
+    width: 50px;
+    border-radius: 50%;
+    height: auto;
 }
