@@ -9,7 +9,7 @@
 <body>
     <header class="index">
         <div class="logo">
-            <img src="logo.png" alt="logo">
+            <img src="#" alt="logo">
             <h1>WhatsApp 4</h1>
         </div>
         <div class="buscarContactos">
@@ -22,7 +22,18 @@
         </div>
     </header>
     <div class="container">
-        
+        <?php 
+        require_once 'contactosService.php';
+
+        $contactos = getAllContactos();
+
+        foreach ($contactos as $contacto): ?>
+            <tr>
+                <td><?= htmlspecialchars($contacto['nombre']) ?></td>
+                <td><?= htmlspecialchars($contacto['apellidos']) ?></td>
+                <td><?= htmlspecialchars($contacto['telefono']) ?></td>
+            </tr>
+        <?php endforeach; ?>
     </div>
 </body>
 </html>
