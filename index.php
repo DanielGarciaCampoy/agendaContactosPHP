@@ -36,7 +36,6 @@
             <div class="contactoInfo">
                 <?php
                 foreach ($contactos as $contacto): ?>
-                    <img src="" alt="">
                     <p><?= $contacto['nombre']; ?>, <?= $contacto['apellidos']; ?></p>
                     <p><?= htmlspecialchars($contacto['telefono']); ?></p>
                 <?php endforeach; ?>
