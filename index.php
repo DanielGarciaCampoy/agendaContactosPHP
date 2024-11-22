@@ -26,7 +26,7 @@
             <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
-            <a href="addContacto.php" class="addContacto" title="Añadir contacto">+</a>
+            <a href="addContactoForm.php" class="addContacto" title="Añadir contacto">+</a>
             <a href="#" class="usuario" title="Usuario"></a>
         </div>
     </header>

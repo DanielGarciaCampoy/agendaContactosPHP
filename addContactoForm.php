@@ -24,7 +24,7 @@
     <main class="addContacto">
         <div class="container">
             <h2>Añadir contacto</h2>
-            <form action="POST">
+            <form action="add" action="post">
                 <label for="nombre"><b>Nombre:</b></label><br>
                 <input type="text" id="nombre" name="nombre" placeholder="Introduzca el nombre..."><br><br>
 
