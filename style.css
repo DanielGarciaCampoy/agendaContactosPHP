@@ -87,10 +87,6 @@ header.index .logo h1 {
 }
 
 /* main */
-.container {
-
-}
-
 .contactoCard {
     display: flex;
     border-radius: 10px;
@@ -103,9 +99,9 @@ header.index .logo h1 {
 }
 
 .contactoImg img {
-    width: 50px;
+    width: 70px;
     border-radius: 50%;
-    height: 50px;
+    height: 70px;
     padding-left: 40px;
     padding-right: 40px;
 }
@@ -121,4 +117,47 @@ header.index .logo h1 {
     text-align: center;
     padding: 20px;
     color: rgb(94, 94, 94);
+}
+
+/* addContacto */
+.botones img {
+    width: 70%;
+}
+
+main.addContacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    color: white;
+    background-color: #4caf4fd2;
+    width: 500px;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+form {
+    padding: 20px;
+}
+
+input {
+    width: 90%;
+    padding: 10px 15px;
+    font-size: 0.8em;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    outline: none;
+    color: #333;
+    margin-top: 5px;
+}
+
+form button {
+    text-align: center;
 }

@@ -19,27 +19,27 @@
     <header class="index">
         <div class="logo">
             <img src="#" alt="logo">
-            <h1>WhatsApp 4</h1>
+            <h1>Wasap 4</h1>
         </div>
         <div class="buscarContactos">
             <input type="text" placeholder="Buscar contactos por nombre...">
             <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
-            <a href="#" class="addContacto" title="Añadir contacto">+</a>
+            <a href="addContacto.php" class="addContacto" title="Añadir contacto">+</a>
             <a href="#" class="usuario" title="Usuario"></a>
         </div>
     </header>
-    <div class="container">
+    <main>
         <?php if (!empty($contactos)): ?>
             <?php foreach ($contactos as $contacto): ?>
                 <div class="contactoCard">
                     <div class="contactoImg">
-                        <img src="img/img.jpeg" alt="Foto de <?= htmlspecialchars($contacto['nombre']); ?>">
+                        <img src="img/user.jpg" alt="Foto de <?= htmlspecialchars($contacto['nombre']); ?>">
                     </div>
                     <div class="contactoInfo">
                         <p><?= htmlspecialchars($contacto['nombre']); ?>, <?= htmlspecialchars($contacto['apellidos']); ?></p>
-                        <p><?= htmlspecialchars($contacto['telefono']); ?></p>
+                        <p><b><?= htmlspecialchars($contacto['telefono']); ?></b></p>
                     </div>
                 </div>
             <?php endforeach; ?>
@@ -49,7 +49,7 @@
                 <p>Usa el botón de la barra superior para añadir</p>
             </div>
         <?php endif; ?>
-    </div>
+    </main>
 </body>
 
 </html>
