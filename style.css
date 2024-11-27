@@ -197,6 +197,6 @@ button[type="button"]:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.formButtons {
-    justify-content: center;
+.formButtons button {
+    cursor: pointer;
 }
