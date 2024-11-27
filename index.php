@@ -26,7 +26,7 @@
             <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
-            <a onclick="abrirDialogo()" class="addContacto" title="Añadir contacto">+</a>
+            <a onclick="abrirDialogForm()" class="addContacto" title="Añadir contacto">+</a>
             <a href="#" class="usuario" title="Usuario"></a>
         </div>
     </header>
@@ -51,7 +51,7 @@
         <?php endif; ?>
     </main>
 
-    <dialog id="dialogoFormulario">
+    <dialog id="dialogForm">
         <div class="container">
             <h2>Añadir contacto</h2>
             <form action="addContacto.php" method="post">
@@ -67,8 +67,10 @@
                 <label for="id_usuario"><b>Id Usuario:</b></label><br>
                 <input type="number" id="id_usuario" name="id_usuario" required placeholder="Introduzca el id_usuario..."><br><br>
 
-                <button type="submit">Añadir contacto</button>
-                <button type="button" onclick="cerrarDialogo()">Cancelar</button>
+                <div class="formButtons">
+                    <button type="submit">Añadir contacto</button>
+                    <button type="button" onclick="cerrarDialogForm()">Cancelar</button>
+                </div>
             </form>
         </div>
     </dialog>

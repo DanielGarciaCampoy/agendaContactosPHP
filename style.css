@@ -74,6 +74,7 @@ header.index .logo h1 {
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s;
+    cursor: pointer;
 }
 
 .botones a:hover {
@@ -160,4 +161,42 @@ input {
 
 form button {
     text-align: center;
+}
+
+/* dialog */
+#dialogForm {
+    border: none;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 20px;
+    border: 1px solid white;
+}
+
+button[type="submit"] {
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button[type="submit"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button[type="button"] {
+    background-color: darkred;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button[type="button"]:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.formButtons {
+    justify-content: center;
 }

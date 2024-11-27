@@ -1,7 +1,7 @@
-function abrirDialogo() {
-    document.getElementById('dialogoFormulario').showModal();
+function abrirDialogForm() {
+    document.getElementById('dialogForm').showModal();
 }
 
-function cerrarDialogo() {
-    document.getElementById('dialogoFormulario').close();
+function cerrarDialogForm() {
+    document.getElementById('dialogForm').close();
 }
