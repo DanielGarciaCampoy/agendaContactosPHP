@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de contactos</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
-
 <body>
     <?php
 
@@ -26,7 +26,7 @@
             <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
-            <a href="addContactoForm.php" class="addContacto" title="Añadir contacto">+</a>
+            <a onclick="abrirDialogo()" class="addContacto" title="Añadir contacto">+</a>
             <a href="#" class="usuario" title="Usuario"></a>
         </div>
     </header>
@@ -50,6 +50,28 @@
             </div>
         <?php endif; ?>
     </main>
+
+    <dialog id="dialogoFormulario">
+        <div class="container">
+            <h2>Añadir contacto</h2>
+            <form action="addContacto.php" method="post">
+                <label for="nombre"><b>Nombre:</b></label><br>
+                <input type="text" id="nombre" name="nombre" required placeholder="Introduzca el nombre..."><br><br>
+
+                <label for="apellidos"><b>Apellidos:</b></label><br>
+                <input type="text" id="apellidos" name="apellidos" required placeholder="Introduzca los apellidos..."><br><br>
+
+                <label for="telefono"><b>Teléfono:</b></label><br>
+                <input type="number" id="telefono" name="telefono" required placeholder="Introduzca el num. de teléfono..."><br><br>
+
+                <label for="id_usuario"><b>Id Usuario:</b></label><br>
+                <input type="number" id="id_usuario" name="id_usuario" required placeholder="Introduzca el id_usuario..."><br><br>
+
+                <button type="submit">Añadir contacto</button>
+                <button type="button" onclick="cerrarDialogo()">Cancelar</button>
+            </form>
+        </div>
+    </dialog>
 </body>
 
 </html>
