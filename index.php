@@ -23,7 +23,6 @@
         </div>
         <div class="buscarContactos">
             <input type="text" placeholder="Buscar contactos por nombre...">
-            <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
             <a onclick="abrirDialogForm()" class="addContacto" title="Añadir contacto">+</a>
