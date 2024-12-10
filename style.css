@@ -20,7 +20,7 @@ header.index .logo {
     align-items: center;
 }
 
-header.index .logo img {
+.logo img {
     width: 40px;
     height: auto;
     margin-right: 10px;
@@ -200,3 +200,5 @@ button[type="button"]:hover {
 .formButtons button {
     cursor: pointer;
 }
+
+/* detalles contacto */
