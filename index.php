@@ -31,6 +31,7 @@
         <div class="buscarContactos">
             <input type="text" placeholder="Buscar contactos por nombre...">
         </div>
+        <p>Sesión iniciada: <?= $_SESSION['usuario'] ?></p>
         <div class="botones">
             <a onclick="abrirDialogForm()" class="addContacto" title="Añadir contacto">+</a>
             <a href="logout.php" class="cerrarSesion" title="Cerrar sesión">
