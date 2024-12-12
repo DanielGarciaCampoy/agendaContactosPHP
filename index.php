@@ -5,7 +5,7 @@
         header("Location: loginForm.php");
         exit();
     }
-    
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +33,9 @@
         </div>
         <div class="botones">
             <a onclick="abrirDialogForm()" class="addContacto" title="Añadir contacto">+</a>
-            <a href="#" class="usuario" title="Usuario"></a>
+            <a href="logout.php" class="cerrarSesion" title="Cerrar sesión">
+                <img src="img/cerrarSesion.png" alt="Cerrar sesión">
+            </a>
         </div>
     </header>
     <main>
