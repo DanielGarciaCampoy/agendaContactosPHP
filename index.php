@@ -8,13 +8,11 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
 </head>
+
 <body>
     <?php
-
     require_once 'contactosService.php';
-
     $contactos = getAllContactos();
-
     ?>
     <header class="index">
         <div class="logo">
@@ -23,7 +21,6 @@
         </div>
         <div class="buscarContactos">
             <input type="text" placeholder="Buscar contactos por nombre...">
-            <button><i class="fas fa-search"></i></button>
         </div>
         <div class="botones">
             <a onclick="abrirDialogForm()" class="addContacto" title="Añadir contacto">+</a>
@@ -33,7 +30,7 @@
     <main>
         <?php if (!empty($contactos)): ?>
             <?php foreach ($contactos as $contacto): ?>
-                <div class="contactoCard">
+                <div class="contactoCard" onclick="submitForm(this)">
                     <div class="contactoImg">
                         <img src="img/user.jpg" alt="Foto de <?= htmlspecialchars($contacto['nombre']); ?>">
                     </div>
@@ -41,6 +38,9 @@
                         <p><?= htmlspecialchars($contacto['nombre']); ?>, <?= htmlspecialchars($contacto['apellidos']); ?></p>
                         <p><b><?= htmlspecialchars($contacto['telefono']); ?></b></p>
                     </div>
+                    <form action="detalleContacto.php" method="post" class="hiddenForm">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">
+                    </form>
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
@@ -59,13 +59,16 @@
                 <input type="text" id="nombre" name="nombre" required placeholder="Introduzca el nombre..."><br><br>
 
                 <label for="apellidos"><b>Apellidos:</b></label><br>
-                <input type="text" id="apellidos" name="apellidos" required placeholder="Introduzca los apellidos..."><br><br>
+                <input type="text" id="apellidos" name="apellidos" required
+                    placeholder="Introduzca los apellidos..."><br><br>
 
                 <label for="telefono"><b>Teléfono:</b></label><br>
-                <input type="number" id="telefono" name="telefono" required placeholder="Introduzca el num. de teléfono..."><br><br>
+                <input type="number" id="telefono" name="telefono" required
+                    placeholder="Introduzca el num. de teléfono..."><br><br>
 
                 <label for="id_usuario"><b>Id Usuario:</b></label><br>
-                <input type="number" id="id_usuario" name="id_usuario" required placeholder="Introduzca el id_usuario..."><br><br>
+                <input type="number" id="id_usuario" name="id_usuario" required
+                    placeholder="Introduzca el id_usuario..."><br><br>
 
                 <div class="formButtons">
                     <button type="submit">Añadir contacto</button>
