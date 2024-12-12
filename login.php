@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
 
-    $query = $conexion->prepare("SELECT * FROM Usuarios WHERE telefono = ? AND password = ?");
+    $query = $conexion->prepare("SELECT * FROM usuarios WHERE telefono = ? AND password = ?");
     $query->bind_param('is', $telefono, $password);
     $query->execute();
 

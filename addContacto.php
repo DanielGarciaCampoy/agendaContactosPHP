@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $conexion = conexionBD();
 
-    $sql = "INSERT INTO Contactos (nombre, apellidos, telefono, id_usuario) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO contactos (nombre, apellidos, telefono, id_usuario) VALUES (?, ?, ?, ?)";
     $query = $conexion->prepare($sql);
     $query->bind_param("ssii", $nombre, $apellidos, $telefono, $id_usuario);
 

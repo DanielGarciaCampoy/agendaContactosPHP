@@ -1,10 +1,10 @@
 <?php
-    session_start();
+session_start();
 
-    if (!isset($_SESSION['usuario'])) {
-        header("Location: loginForm.php");
-        exit();
-    }
+if (!isset($_SESSION['usuario'])) {
+    header("Location: loginForm.php");
+    exit();
+}
 
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agenda de contactos</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <script>
+        function abrirDialogForm() {
+            document.getElementById('dialogForm').showModal();
+        }
+
+        function cerrarDialogForm() {
+            document.getElementById('dialogForm').close();
+        }
+
+        function submitForm(contactCard) {
+            const form = contactCard.querySelector('form');
+            if (form) {
+                form.submit();
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -51,7 +66,7 @@
                         <p><b><?= htmlspecialchars($contacto['telefono']); ?></b></p>
                     </div>
                     <form action="detalleContacto.php" method="post" class="hiddenForm">
-                    <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">
+                        <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">
                     </form>
                 </div>
             <?php endforeach; ?>

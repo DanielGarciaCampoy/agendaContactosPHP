@@ -5,7 +5,7 @@ require_once 'bbdd.php';
 function getAllContactos() {
     $conexion = conexionBD();
 
-    $sql = "SELECT id, nombre, apellidos, telefono FROM Contactos";
+    $sql = "SELECT id, nombre, apellidos, telefono FROM contactos";
     $resultado = $conexion->query($sql);
 
     $contactos = [];
