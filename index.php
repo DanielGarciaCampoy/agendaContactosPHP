@@ -39,7 +39,7 @@
                         <p><b><?= htmlspecialchars($contacto['telefono']); ?></b></p>
                     </div>
                     <form action="detalleContacto.php" method="post" class="hiddenForm">
-                        <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">
+                    <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">
                     </form>
                 </div>
             <?php endforeach; ?>

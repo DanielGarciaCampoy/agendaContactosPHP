@@ -1,13 +1,12 @@
 <?php
 require_once 'contactosService.php';
 
-// Verificamos que el método sea POST y que el ID esté presente
 if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['id'])) {
-    header('Location: index.php'); // Redirigimos si no se proporcionó el ID
+    header('Location: index.php');
     exit();
 }
 
-$id = intval($_POST['id']); // Convertimos el ID a entero para mayor seguridad
+$id = intval($_POST['id']);
 $contacto = getContactoById($id);
 
 if (!$contacto) {
