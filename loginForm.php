@@ -17,5 +17,10 @@
         <button type="submit">Ingresar</button>
     </form>
     <a href="registerForm.php"><button>Registrarse</button></a>
+    <?php if (isset($_GET['success'])): ?>
+        <?php if ($_GET['success'] == 1): ?>
+            <p style="color: green;">Cuenta creada con éxito, ahora inicie sesión</p>
+        <?php endif; ?>
+    <?php endif; ?>
 </body>
 </html>
