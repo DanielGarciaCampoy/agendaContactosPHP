@@ -17,5 +17,10 @@
         <button type="submit">Registrarse</button>
     </form>
     <p>¿Ya tienes una cuenta? <a href="loginForm.php">Inicia sesión aquí</a>.</p>
+    <?php if (isset($_GET['error'])): ?>
+        <?php if ($_GET['error'] == 1): ?>
+            <p style="color: red;">El teléfono ya está registrado. Intenta con otro.</p>
+        <?php endif; ?>
+    <?php endif; ?>
 </body>
 </html>

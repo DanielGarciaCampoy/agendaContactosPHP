@@ -22,8 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($query->execute()) {
         header("Location: loginForm.php?success=1");
-    } else {
-        header("Location: registerForm.php?error=2");
     }
 
     $query->close();
