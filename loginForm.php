@@ -9,7 +9,7 @@
     <h1>Iniciar Sesión</h1>
     <form action="login.php" method="POST">
         <label for="telefono">Teléfono:</label>
-        <input type="text" id="telefono" name="telefono" required>
+        <input type="number" id="telefono" name="telefono" required>
         <br>
         <label for="password">Contraseña:</label>
         <input type="password" id="password" name="password" required>
@@ -20,6 +20,11 @@
     <?php if (isset($_GET['success'])): ?>
         <?php if ($_GET['success'] == 1): ?>
             <p style="color: green;">Cuenta creada con éxito, ahora inicie sesión</p>
+        <?php endif; ?>
+    <?php endif; ?>
+    <?php if (isset($_GET['error'])): ?>
+        <?php if ($_GET['error'] == 1): ?>
+            <p style="color: red;">Teléfono o contraseña introducida incorrecta</p>
         <?php endif; ?>
     <?php endif; ?>
 </body>
