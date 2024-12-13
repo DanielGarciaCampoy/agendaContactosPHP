@@ -11,7 +11,7 @@
 <body>
     <header class="index">
         <div class="logo">
-            <img src="#" alt="logo">
+            <img src="img/wasap.jpg" alt="logo">
             <h1>Wasap 4</h1>
         </div>
     </header>
