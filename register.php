@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $avatar = $_POST['avatar'];
 
-    $query = $conexion->prepare("SELECT * FROM usuarios WHERE telefono = ?");
+    $query = $conexion->prepare("SELECT * FROM Usuarios WHERE telefono = ?");
     $query->bind_param('i', $telefono);
     $query->execute();
     $result = $query->get_result();

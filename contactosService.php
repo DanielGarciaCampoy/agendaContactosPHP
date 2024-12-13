@@ -5,7 +5,7 @@ require_once 'bbdd.php';
 function getAllContactos($nombreBuscar = '') {
     $conexion = conexionBD();
 
-    $sql = "SELECT id, nombre, apellidos, telefono FROM contactos";
+    $sql = "SELECT id, nombre, apellidos, telefono FROM Contactos";
     
     if (!empty($nombreBuscar)) {
         $sql .= " WHERE nombre LIKE ?";

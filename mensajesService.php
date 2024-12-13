@@ -5,7 +5,7 @@ require_once 'bbdd.php';
 function getMensajesByContactoId($contactoId) {
     $conexion = conexionBD();
 
-    $sql = "SELECT id, texto, fecha_envio, id_contacto FROM mensajes WHERE id_contacto = ?";
+    $sql = "SELECT id, texto, fecha_envio, id_contacto FROM Mensajes WHERE id_contacto = ?";
     $query = $conexion->prepare($sql);
     $query->bind_param("i", $contactoId);
     $query->execute();

@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $conexion = conexionBD();
 
-    $sql = "INSERT INTO mensajes (id_contacto, texto, fecha_envio) VALUES (?, ?, NOW())";
+    $sql = "INSERT INTO Mensajes (id_contacto, texto, fecha_envio) VALUES (?, ?, NOW())";
     $query = $conexion->prepare($sql);
 
     $query->bind_param("is", $idContacto, $mensaje);
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($query->affected_rows > 0) {
         $query->close();
         $conexion->close();
-        header("Location: detalleContacto.php");
+        header("Location: detalleContacto.php?id=".$_POST['id_contacto']);
         exit();
     }
 } else {

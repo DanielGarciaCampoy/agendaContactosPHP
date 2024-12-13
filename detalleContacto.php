@@ -1,12 +1,12 @@
 <?php
 require_once 'contactosService.php';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['id'])) {
+/*if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_REQUEST['id'])) {
     header('Location: index.php');
     exit();
-}
+}*/
 
-$id = intval($_POST['id']);
+$id = intval($_REQUEST['id']);
 $contacto = getContactoById($id);
 
 require_once 'mensajesService.php';
