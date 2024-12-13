@@ -232,3 +232,39 @@ a.cerrarSesion {
     font-size: 0.9em;
     color: #888;
 }
+
+/* footer mensaje*/
+footer.mensaje {
+    display: flex;
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.mensajeForm {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+.mensajeForm input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.mensajeForm button {
+    padding: 10px 20px;
+    background-color: white;
+    color: #4caf50;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
