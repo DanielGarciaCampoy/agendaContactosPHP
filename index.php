@@ -36,7 +36,10 @@ if (!isset($_SESSION['usuario'])) {
 <body>
     <?php
     require_once 'contactosService.php';
-    $contactos = getAllContactos();
+
+    $nombreBuscar = isset($_POST['nombre']) ? $_POST['nombre'] : '';
+
+    $contactos = getAllContactos($nombreBuscar);
     ?>
     <header class="index">
         <div class="logo">
@@ -44,7 +47,10 @@ if (!isset($_SESSION['usuario'])) {
             <h1>Wasap 4</h1>
         </div>
         <div class="buscarContactos">
-            <input type="text" placeholder="Buscar contactos por nombre...">
+            <form action="index.php" method="POST">
+                <input type="text" name="nombre" placeholder="Buscar contactos por nombre..." value="<?= htmlspecialchars($nombreBuscar); ?>">
+                <button type="submit">Buscar</button>
+            </form>
         </div>
         <p>Sesión iniciada: <?= $_SESSION['usuario'] ?></p>
         <div class="botones">
@@ -62,7 +68,8 @@ if (!isset($_SESSION['usuario'])) {
                         <img src="img/user.jpg" alt="Foto de <?= htmlspecialchars($contacto['nombre']); ?>">
                     </div>
                     <div class="contactoInfo">
-                        <?= htmlspecialchars($contacto['nombre']); ?>, <?= htmlspecialchars($contacto['apellidos']) ?> <b> <?= htmlspecialchars($contacto['telefono']); ?></b></p>
+                        <?= htmlspecialchars($contacto['nombre']); ?>, <?= htmlspecialchars($contacto['apellidos']) ?> <b>
+                            <?= htmlspecialchars($contacto['telefono']); ?></b></p>
                     </div>
                     <form action="detalleContacto.php" method="post" class="hiddenForm">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">

@@ -2,11 +2,24 @@
 
 require_once 'bbdd.php';
 
-function getAllContactos() {
+function getAllContactos($nombreBuscar = '') {
     $conexion = conexionBD();
 
     $sql = "SELECT id, nombre, apellidos, telefono FROM contactos";
-    $resultado = $conexion->query($sql);
+    
+    if (!empty($nombreBuscar)) {
+        $sql .= " WHERE nombre LIKE ?";
+    }
+
+    $query = $conexion->prepare($sql);
+
+    if (!empty($nombreBuscar)) {
+        $nombreBuscar = '%' . $nombreBuscar . '%';
+        $query->bind_param("s", $nombreBuscar);
+    }
+
+    $query->execute();
+    $resultado = $query->get_result();
 
     $contactos = [];
     while ($fila = $resultado->fetch_assoc()) {
@@ -18,8 +31,12 @@ function getAllContactos() {
         ];
     }
 
+    $query->close();
+    $conexion->close();
+
     return $contactos;
 }
+
 
 function getContactoById($id) {
     $conexion = conexionBD();
