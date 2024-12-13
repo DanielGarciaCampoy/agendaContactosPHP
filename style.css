@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 
 /* header */
@@ -271,4 +272,37 @@ footer.mensaje {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
+}
+
+/* login */
+main.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+div.login h1 {
+    text-align: center;
+}
+
+div.login form input {
+    margin-bottom: 20px;
+}
+
+button.registrarse {
+    background-color: darkslategray;
+    color: white;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+button.registrarse:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+div.registrarse {
+    text-align: center;
 }
