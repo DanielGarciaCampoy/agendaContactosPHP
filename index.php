@@ -107,10 +107,6 @@ if (!isset($_SESSION['usuario'])) {
                 <input type="number" id="telefono" name="telefono" required
                     placeholder="Introduzca el num. de teléfono..."><br><br>
 
-                <label for="id_usuario"><b>Id Usuario:</b></label><br>
-                <input type="number" id="id_usuario" name="id_usuario" required
-                    placeholder="Introduzca el id_usuario..."><br><br>
-
                 <div class="formButtons">
                     <button type="submit">Añadir contacto</button>
                     <button type="button" onclick="cerrarDialogForm()">Cancelar</button>
