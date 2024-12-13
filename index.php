@@ -48,11 +48,19 @@ if (!isset($_SESSION['usuario'])) {
         </div>
         <div class="buscarContactos">
             <form action="index.php" method="POST">
-                <input type="text" name="nombre" placeholder="Buscar contactos por nombre..." value="<?= htmlspecialchars($nombreBuscar); ?>">
+                <input type="text" name="nombre" placeholder="Buscar contactos por nombre..."
+                    value="<?= htmlspecialchars($nombreBuscar); ?>">
                 <button type="submit">Buscar</button>
             </form>
         </div>
-        <p>Sesión iniciada: <?= $_SESSION['usuario'] ?></p>
+        <div class="usuario">
+            <p>Sesión iniciada: <?= $_SESSION['usuario'] ?>
+                <?php if (!empty($_SESSION['avatar'])): ?>
+                    <img src="<?= htmlspecialchars($_SESSION['avatar']); ?>" alt="avatar" class="avatar">
+                <?php else: ?>
+                    <img src="img/avatar.jpg" alt="avatar" class="avatar">
+                <?php endif; ?>
+        </div>
         <div class="botones">
             <a onclick="abrirDialogForm()" class="addContacto" title="Añadir contacto">+</a>
             <a href="logout.php" class="cerrarSesion" title="Cerrar sesión">

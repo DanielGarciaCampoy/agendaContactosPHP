@@ -92,6 +92,11 @@ header.index .logo h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+img.avatar {
+    width: 50px;
+    border-radius: 50%;
+}
+
 /* main */
 .contactoCard {
     display: flex;
@@ -306,3 +311,4 @@ button.registrarse:hover {
 div.registrarse {
     text-align: center;
 }
+

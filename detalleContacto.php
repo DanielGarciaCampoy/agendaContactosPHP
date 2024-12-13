@@ -11,6 +11,8 @@ $contacto = getContactoById($id);
 
 require_once 'mensajesService.php';
 $mensajes = getMensajesByContactoId($id);
+
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +32,14 @@ $mensajes = getMensajesByContactoId($id);
             <h2><?= $contacto['nombre'] . ' ' . $contacto['apellidos'] . ', ' . $contacto['telefono'];;?></h2>
         </div>
         <div class="botones">
+        <div class="usuario">
+            <p>Sesión iniciada: <?= $_SESSION['usuario'] ?>
+                <?php if (!empty($_SESSION['avatar'])): ?>
+                    <img src="<?= htmlspecialchars($_SESSION['avatar']); ?>" alt="avatar" class="avatar" style="width: 50px;">
+                <?php else: ?>
+                    <img src="img/avatar.jpg" alt="avatar" class="avatar" style="width: 50px;">
+                <?php endif; ?>
+        </div>
             <a href="index.php" class="usuario" title="Volver">
                 <img src="img/volver.png" alt="">
             </a>
