@@ -55,7 +55,7 @@ $mensajes = getMensajesByContactoId($id);
 </body>
 
 <footer class="mensaje">
-    <form action="" method="POST" class="mensajeForm">
+    <form action="enviarMensaje.php" method="POST" class="mensajeForm">
         <input type="hidden" name="id_contacto" value="<?= htmlspecialchars($id); ?>">
         <input type="text" name="mensaje" placeholder="Escribe un mensaje..." required>
         <button type="submit">Enviar</button>
