@@ -39,7 +39,7 @@ header.index .logo h1 {
 }
 
 .buscarContactos input {
-    width: 100%;
+    width: 300px;
     padding: 10px;
     border: none;
     border-radius: 20px;
@@ -53,6 +53,10 @@ header.index .logo h1 {
     padding: 8px 12px;
     border-radius: 0 20px 20px 0;
     cursor: pointer;
+}
+
+.buscarContactos form {
+    width: 100%;
 }
 
 .botones {
