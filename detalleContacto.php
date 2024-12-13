@@ -37,7 +37,7 @@ session_start();
                 <?php if (!empty($_SESSION['avatar'])): ?>
                     <img src="<?= htmlspecialchars($_SESSION['avatar']); ?>" alt="avatar" class="avatar" style="width: 50px;">
                 <?php else: ?>
-                    <img src="img/avatar.jpg" alt="avatar" class="avatar" style="width: 50px;">
+                    <img src="img/user.jpg" alt="avatar" class="avatar" style="width: 50px;">
                 <?php endif; ?>
         </div>
             <a href="index.php" class="usuario" title="Volver">

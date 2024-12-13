@@ -58,7 +58,7 @@ if (!isset($_SESSION['usuario'])) {
                 <?php if (!empty($_SESSION['avatar'])): ?>
                     <img src="<?= htmlspecialchars($_SESSION['avatar']); ?>" alt="avatar" class="avatar">
                 <?php else: ?>
-                    <img src="img/avatar.jpg" alt="avatar" class="avatar">
+                    <img src="img/user.jpg" alt="avatar" class="avatar">
                 <?php endif; ?>
         </div>
         <div class="botones">
