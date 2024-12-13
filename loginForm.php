@@ -29,10 +29,10 @@ if (isset($_SESSION['usuario'])) {
             <h1>Iniciar Sesión</h1>
             <form action="login.php" method="POST">
                 <label for="telefono">Teléfono:</label>
-                <input type="number" id="telefono" name="telefono" required>
+                <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono..." required>
                 <br>
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Contraseña..." required>
                 <br>
                 <button type="submit">Ingresar</button>
             </form>

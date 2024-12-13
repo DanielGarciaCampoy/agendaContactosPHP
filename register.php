@@ -6,6 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $telefono = $_POST['telefono'];
     $password = $_POST['password'];
+    $avatar = $_POST['avatar'];
 
     $query = $conexion->prepare("SELECT * FROM usuarios WHERE telefono = ?");
     $query->bind_param('i', $telefono);
@@ -17,8 +18,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    $query = $conexion->prepare("INSERT INTO Usuarios (telefono, password) VALUES (?, ?)");
-    $query->bind_param('is', $telefono, $password);
+    if ($avatar) {
+        $query = $conexion->prepare("INSERT INTO Usuarios (telefono, password, avatar) VALUES (?, ?, ?)");
+        $query->bind_param('iss', $telefono, $password, $avatar);
+    } else {
+        $query = $conexion->prepare("INSERT INTO Usuarios (telefono, password) VALUES (?, ?)");
+        $query->bind_param('is', $telefono, $password);
+    }
 
     if ($query->execute()) {
         header("Location: loginForm.php?success=1");

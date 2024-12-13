@@ -29,10 +29,13 @@ if (isset($_SESSION['usuario'])) {
             <h1>Registro de Usuario</h1>
             <form action="register.php" method="post">
                 <label for="telefono">Teléfono:</label>
-                <input type="number" id="telefono" name="telefono" required>
+                <input type="number" id="telefono" name="telefono" placeholder="Número de teléfono..." required>
                 <br>
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="Introduzca contraseña..." required>
+                <br>
+                <label for="avatar">Avatar:</label>
+                <input type="avatar" id="avatar" name="avatar" placeholder="Introduzca enlace de la imagen...">
                 <br>
                 <button type="submit">Registrarse</button>
             </form>
