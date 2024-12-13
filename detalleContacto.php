@@ -9,11 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isset($_POST['id'])) {
 $id = intval($_POST['id']);
 $contacto = getContactoById($id);
 
-if (!$contacto) {
-    echo "<h2>Contacto no encontrado</h2>";
-    echo "<a href='index.php'>Volver a la lista de contactos</a>";
-    exit();
-}
+require_once 'mensajesService.php';
+$mensajes = getMensajesByContactoId($id);
 ?>
 
 <!DOCTYPE html>
@@ -39,7 +36,21 @@ if (!$contacto) {
         </div>
     </header>
     <main>
-        
+    <?php if (!empty($mensajes)): ?>
+            <?php foreach ($mensajes as $mensaje): ?>
+                <div class="mensajeCard">
+                    <div class="mensajeInfo">
+                        <p><?= $mensaje['texto']; ?></p>
+                        <p><?= $mensaje['fecha_envio']; ?></p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <div class="noContacto">
+                <h3>No has iniciado una conversación todavia</h3>
+                <p>Usa la barra de abajo para escribir</p>
+            </div>
+        <?php endif; ?>
     </main>
 </body>
 

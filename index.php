@@ -62,8 +62,7 @@ if (!isset($_SESSION['usuario'])) {
                         <img src="img/user.jpg" alt="Foto de <?= htmlspecialchars($contacto['nombre']); ?>">
                     </div>
                     <div class="contactoInfo">
-                        <p><?= htmlspecialchars($contacto['nombre']); ?>, <?= htmlspecialchars($contacto['apellidos']); ?></p>
-                        <p><b><?= htmlspecialchars($contacto['telefono']); ?></b></p>
+                        <?= htmlspecialchars($contacto['nombre']); ?>, <?= htmlspecialchars($contacto['apellidos']) ?> <b> <?= htmlspecialchars($contacto['telefono']); ?></b></p>
                     </div>
                     <form action="detalleContacto.php" method="post" class="hiddenForm">
                         <input type="hidden" name="id" value="<?= htmlspecialchars($contacto['id']); ?>">

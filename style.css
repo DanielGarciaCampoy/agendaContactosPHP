@@ -205,3 +205,30 @@ button[type="button"]:hover {
 a.cerrarSesion {
     background-color: red;
 }
+
+.mensajeCard {
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    background-color: lightgray;
+    width: 50%;
+    align-items: center;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.mensajeInfo {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.mensajeInfo p {
+    margin: 0;
+}
+
+.mensajeInfo p:last-child {
+    text-align: right;
+    font-size: 0.9em;
+    color: #888;
+}
